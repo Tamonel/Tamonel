@@ -8,9 +8,10 @@
 // The words on the cards are written by hand below. Every number comes from
 // data/stats.json, which the nightly workflow refreshes.
 //
-// The look: night sky. Purple carries everything; cyan and magenta are small
-// accents for contrast (the portal's core, the comet, whatever is "now"). A
-// spinning portal in the header, and the year drawn as a spiral galaxy.
+// The look: cosmic mocha. Espresso-dark surfaces and cream text, purple leading,
+// muted bronze as the warm second colour, and cyan and magenta kept for small
+// accents (the portal's core, the comet, whatever is "now"). A spinning portal
+// in the header, and the year drawn as a spiral galaxy.
 // Type is Space Grotesk, with JetBrains Mono for labels and figures.
 //
 // GitHub shows README images without web fonts, so each card carries the
@@ -244,39 +245,46 @@ const CONTACT = {
 
 const THEMES = {
   dark: {
-    surface: "#0d0b1f",
-    band: "#141030",
-    border: "#2c2556",
-    text: "#f5f1ff",
-    secondary: "#bdb3e0",
-    muted: "#8a80b3",
-    track: "#221c45",
+    surface: "#151015",
+    band: "#1e161c",
+    border: "#3a2c33",
+    text: "#f6eee8",
+    secondary: "#cdbcb4",
+    muted: "#98847d",
+    track: "#2a2026",
     pink: "#ff5fc8",
     violet: "#a07cff",
     lavender: "#cbb8ff",
+    bronze: "#c8955f",
+    mocha: "#6e4c3c",
     cyan: "#45e3ff",
-    onAccent: "#0d0b1f",
-    star: "#ffffff",
-    glow: 0.22,
-    // Quiet to busy, for the galaxy and the grid.
-    levels: ["#2a2352", "#45338f", "#6a4ed0", "#a07cff", "#ff5fc8"],
+    onAccent: "#151015",
+    star: "#fff3e6",
+    glow: 0.2,
+    warm: 0.16,
+    // Quiet to busy, for the galaxy and the grid: espresso, mocha, bronze,
+    // purple, and magenta for the busiest days.
+    levels: ["#2c2127", "#6e4c3c", "#b0814f", "#a07cff", "#ff5fc8"],
   },
   light: {
-    surface: "#fffdff",
-    band: "#f6f1ff",
-    border: "#e3d9f6",
-    text: "#1a1233",
-    secondary: "#51476f",
-    muted: "#7a7099",
-    track: "#efe9fa",
+    surface: "#fdf9f5",
+    band: "#f6eee6",
+    border: "#e7d9cd",
+    text: "#24161a",
+    secondary: "#5c4840",
+    muted: "#8a7468",
+    track: "#f1e7de",
     pink: "#c81e8c",
     violet: "#6a3fd8",
     lavender: "#8b6ee8",
+    bronze: "#9a6434",
+    mocha: "#6e4c3c",
     cyan: "#0a7fa6",
     onAccent: "#ffffff",
-    star: "#6a3fd8",
+    star: "#9a6434",
     glow: 0.1,
-    levels: ["#ece5f8", "#d3c2f5", "#a88bf0", "#7048dc", "#c81e8c"],
+    warm: 0.1,
+    levels: ["#efe4da", "#dcc3ab", "#b98b5f", "#7048dc", "#c81e8c"],
   },
 };
 // The dot in each project's status pill: cyan for Wakandi, magenta for my own.
@@ -328,14 +336,16 @@ function frame(t, w, h, title, body, { css = "", defs = "" } = {}) {
   <title>${esc(title)}</title>
   <style>/*FONTS*/${css}</style>
   <defs>
-    <linearGradient id="edge" x1="0" x2="1"><stop offset="0" stop-color="${t.pink}"/><stop offset=".14" stop-color="${t.violet}"/><stop offset=".86" stop-color="${t.violet}"/><stop offset="1" stop-color="${t.cyan}"/></linearGradient>
+    <linearGradient id="edge" x1="0" x2="1"><stop offset="0" stop-color="${t.bronze}"/><stop offset=".3" stop-color="${t.violet}"/><stop offset=".88" stop-color="${t.violet}"/><stop offset="1" stop-color="${t.cyan}"/></linearGradient>
     <radialGradient id="glow" cx="1" cy="0" r="1"><stop offset="0" stop-color="${t.violet}" stop-opacity="${t.glow}"/><stop offset=".6" stop-color="${t.violet}" stop-opacity="0"/></radialGradient>
+    <radialGradient id="warm" cx="0" cy="1" r="1"><stop offset="0" stop-color="${t.bronze}" stop-opacity="${t.warm}"/><stop offset=".65" stop-color="${t.bronze}" stop-opacity="0"/></radialGradient>
     <clipPath id="card"><rect x="0.5" y="0.5" width="${w - 1}" height="${h - 1}" rx="16"/></clipPath>
 ${defs}
   </defs>
   <rect x="0.5" y="0.5" width="${w - 1}" height="${h - 1}" rx="16" fill="${t.surface}"/>
   <g clip-path="url(#card)">
     <rect x="${w * 0.45}" y="0" width="${w * 0.55}" height="${Math.min(h, 260)}" fill="url(#glow)"/>
+    <rect x="0" y="${Math.max(0, h - 220)}" width="${w * 0.5}" height="${Math.min(h, 220)}" fill="url(#warm)"/>
     <rect x="0" y="0" width="${w}" height="3" fill="url(#edge)"/>
   </g>
 ${body}
@@ -440,12 +450,13 @@ function headerCard(t) {
   ]
     .map(
       ([r, d, rev, dash, sw], i) =>
-        `    <circle class="spin${rev ? " rev" : ""}" style="--d:${d};transform-origin:${px}px ${py}px" cx="${px}" cy="${py}" r="${r}" fill="none" stroke="url(#ring${i % 2})" stroke-width="${sw}" stroke-dasharray="${dash}" stroke-linecap="round"/>`,
+        `    <circle class="spin${rev ? " rev" : ""}" style="--d:${d};transform-origin:${px}px ${py}px" cx="${px}" cy="${py}" r="${r}" fill="none" stroke="url(#ring${i % 3})" stroke-width="${sw}" stroke-dasharray="${dash}" stroke-linecap="round"/>`,
     )
     .join("\n");
 
-  const defs = `    <linearGradient id="name" x1="32" x2="640" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${t.text}"/><stop offset=".5" stop-color="${t.text}"/><stop offset="1" stop-color="${t.lavender}"/></linearGradient>
+  const defs = `    <linearGradient id="name" x1="32" x2="640" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${t.text}"/><stop offset=".45" stop-color="${t.text}"/><stop offset=".75" stop-color="${t.bronze}"/><stop offset="1" stop-color="${t.violet}"/></linearGradient>
     <linearGradient id="ring0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${t.violet}"/><stop offset="1" stop-color="${t.lavender}"/></linearGradient>
+    <linearGradient id="ring2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="${t.bronze}"/><stop offset="1" stop-color="${t.violet}"/></linearGradient>
     <linearGradient id="ring1" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${t.violet}"/><stop offset=".7" stop-color="${t.violet}"/><stop offset="1" stop-color="${t.cyan}"/></linearGradient>
     <radialGradient id="core"><stop offset="0" stop-color="${t.star}" stop-opacity=".95"/><stop offset=".35" stop-color="${t.cyan}" stop-opacity=".7"/><stop offset="1" stop-color="${t.violet}" stop-opacity="0"/></radialGradient>
     <radialGradient id="halo"><stop offset="0" stop-color="${t.violet}" stop-opacity=".35"/><stop offset="1" stop-color="${t.violet}" stop-opacity="0"/></radialGradient>`;
@@ -455,7 +466,7 @@ function headerCard(t) {
   <circle cx="${px}" cy="${py}" r="96" fill="url(#halo)"/>
 ${rings}
   <circle class="pulse" cx="${px}" cy="${py}" r="20" fill="url(#core)"/>
-  <text x="34" y="52" font-size="11.5" ${M} fill="${t.lavender}" letter-spacing="1.5">${esc(HEADER.kicker)}</text>
+  <text x="34" y="52" font-size="11.5" ${M} fill="${t.bronze}" letter-spacing="1.5">${esc(HEADER.kicker)}</text>
   <text x="32" y="106" font-size="43" ${D} fill="url(#name)" letter-spacing="0.5">${esc(HEADER.name)}</text>
   <text x="34" y="140" font-size="17" fill="${t.secondary}">${esc(HEADER.line)}</text>
   <rect x="0" y="${bandY}" width="${w}" height="${h - bandY}" fill="${t.band}" clip-path="url(#card)"/>
@@ -507,7 +518,7 @@ function projectCard(t, p) {
   const dot = GROUP_DOT[p.group];
   const right = w - 24;
   const body = [
-    `  <text x="24" y="38" font-size="11" ${M} fill="${t.lavender}" letter-spacing="1">${esc(p.meta.toUpperCase())}</text>`,
+    `  <text x="24" y="38" font-size="11" ${M} fill="${t.bronze}" letter-spacing="1">${esc(p.meta.toUpperCase())}</text>`,
     pill(t, right, 22, p.status, "violet", dot),
     `  <text x="23" y="76" font-size="25" ${D} fill="${t.text}">${esc(p.title)}</text>`,
     ...p.lines.map((line, i) => `  <text x="24" y="${106 + i * 21}" font-size="13.5" fill="${t.secondary}">${esc(line)}</text>`),
@@ -563,7 +574,7 @@ function galaxyCard(t) {
   const ly = (16 + 214 * lastF) * Math.sin(lastA);
   const today = `<circle class="ping" style="transform-origin:${n1(lx)}px ${n1(ly)}px" cx="${n1(lx)}" cy="${n1(ly)}" r="5" fill="none" stroke="${t.pink}" stroke-width="1.5"/>`;
 
-  const defs = `    <radialGradient id="core"><stop offset="0" stop-color="${t.star}" stop-opacity=".9"/><stop offset=".25" stop-color="${t.lavender}" stop-opacity=".4"/><stop offset=".6" stop-color="${t.violet}" stop-opacity=".12"/><stop offset="1" stop-color="${t.violet}" stop-opacity="0"/></radialGradient>`;
+  const defs = `    <radialGradient id="core"><stop offset="0" stop-color="${t.star}" stop-opacity=".9"/><stop offset=".22" stop-color="${t.bronze}" stop-opacity=".45"/><stop offset=".6" stop-color="${t.violet}" stop-opacity=".12"/><stop offset="1" stop-color="${t.violet}" stop-opacity="0"/></radialGradient>`;
 
   const busiest = DATA.months.reduce((a, b) => (b.count > a.count ? b : a));
   const facts = [
@@ -709,7 +720,7 @@ function linesCard(t) {
       const delay = `style="animation-delay:${i * 40}ms"`;
       return [
         a && `  <rect class="u" ${delay} x="${n1(x)}" y="${n1(base - a)}" width="${n1(bw)}" height="${n1(a)}" rx="2" fill="${t.violet}"/>`,
-        r && `  <rect class="dn" ${delay} x="${n1(x)}" y="${base + 1}" width="${n1(bw)}" height="${n1(r)}" rx="2" fill="${t.muted}" fill-opacity=".55"/>`,
+        r && `  <rect class="dn" ${delay} x="${n1(x)}" y="${base + 1}" width="${n1(bw)}" height="${n1(r)}" rx="2" fill="${t.bronze}" fill-opacity=".6"/>`,
         `  <text x="${n1(x + bw / 2)}" y="${h - 18}" text-anchor="middle" font-size="10" ${M} fill="${t.muted}">${monthName(m.month, "narrow")}</text>`,
       ].filter(Boolean).join("\n");
     })
@@ -717,7 +728,7 @@ function linesCard(t) {
   const added = `+${kilo(L.added)}`;
   const body = `${heading(t, w, "Lines changed", "last 12 months")}
   <text x="22" y="100" font-size="44" ${D} fill="${t.violet}">${added}</text>
-  <text x="${n1(34 + added.length * 28)}" y="100" font-size="24" ${D} fill="${t.muted}">−${kilo(L.removed)}</text>
+  <text x="${n1(34 + added.length * 28)}" y="100" font-size="24" ${D} fill="${t.bronze}">−${kilo(L.removed)}</text>
   <text x="24" y="122" font-size="11.5" fill="${t.muted}">${L.bulkSkipped ? `Leaving out ${L.bulkSkipped} bulk commits: imports and generated files` : "Added and removed"}</text>
 ${bars}
   <line x1="24" y1="${base + 0.5}" x2="${w - 24}" y2="${base + 0.5}" stroke="${t.border}"/>`;
@@ -742,12 +753,12 @@ function sourceCard(t) {
   <text x="222" y="${y + 34}" font-size="11.5" fill="${t.muted}">${esc(line2)}</text>`;
   const body = `${heading(t, w, "Where my commits go", "last 12 months")}
   <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${t.track}" stroke-width="18"/>
-  <circle class="arc" cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${t.cyan}" stroke-width="18" stroke-dasharray="${n1(C)} ${n1(C)}" transform="rotate(-90 ${cx} ${cy})"/>
+  <circle class="arc" cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${t.bronze}" stroke-width="18" stroke-dasharray="${n1(C)} ${n1(C)}" transform="rotate(-90 ${cx} ${cy})"/>
   <circle class="arc" cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${t.violet}" stroke-width="18" stroke-dasharray="${n1(teamLen)} ${n1(C)}" transform="rotate(-90 ${cx} ${cy})"/>
   <text x="${cx}" y="${cy + 6}" text-anchor="middle" font-size="30" ${D} fill="${t.text}">${fmt(total)}</text>
   <text x="${cx}" y="${cy + 26}" text-anchor="middle" font-size="11" ${M} fill="${t.muted}">commits</text>
 ${row(118, "violet", "Wakandi", team, "Jamii Connect, CRB Lookup,", "Jamii Studio, Waypoint")}
-${row(196, "cyan", "Personal & client", personal, "MemberPulse, Expert RN Scholars,", "Sheria AI, EA Outreach")}`;
+${row(196, "bronze", "Personal & client", personal, "MemberPulse, Expert RN Scholars,", "Sheria AI, EA Outreach")}`;
   return frame(t, w, h, "Where my commits go", body, { css: css + REDUCED });
 }
 
@@ -755,7 +766,7 @@ function languagesCard(t) {
   const w = 425;
   const h = 280;
   const langs = DATA.languages.filter((l) => l.pct >= 0.5).slice(0, 6);
-  const tones = [t.violet, t.lavender, t.cyan, t.secondary, t.muted, t.muted];
+  const tones = [t.violet, t.bronze, t.lavender, t.cyan, t.mocha, t.muted];
   const total = langs.reduce((s, l) => s + l.pct, 0);
   let bx = 24;
   const barW = w - 48;
@@ -803,7 +814,7 @@ function weekdaysCard(t) {
       const bw = step * 0.52;
       const bh = Math.max(2, (n / max) * chartH);
       const lead = n === max;
-      return `  <rect class="u" style="animation-delay:${i * 60}ms" x="${n1(x)}" y="${n1(base - bh)}" width="${n1(bw)}" height="${n1(bh)}" rx="4" fill="${lead ? "url(#bar)" : t.violet}" fill-opacity="${lead ? 1 : 0.45}"/>
+      return `  <rect class="u" style="animation-delay:${i * 60}ms" x="${n1(x)}" y="${n1(base - bh)}" width="${n1(bw)}" height="${n1(bh)}" rx="4" fill="${lead ? "url(#bar)" : t.violet}" fill-opacity="${lead ? 1 : 0.4}"/>
   <text x="${n1(x + bw / 2)}" y="${n1(base - bh - 7)}" text-anchor="middle" font-size="11" ${M} fill="${lead ? t.lavender : t.secondary}">${n}</text>
   <text x="${n1(x + bw / 2)}" y="${base + 20}" text-anchor="middle" font-size="11.5" fill="${t.muted}">${name}</text>`;
     })
@@ -831,7 +842,7 @@ function certsCard(t) {
     return `  <g class="p" style="animation-delay:${i * 50}ms">
   <circle cx="${x + 15}" cy="${y + 27}" r="14" fill="${t[tone]}" fill-opacity=".14" stroke="${t[tone]}" stroke-opacity=".6"/>
   <path d="M${x + 9} ${y + 27.5}l4 4 7.6-8.2" fill="none" stroke="${t[tone]}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="${x + 40}" y="${y + 13}" font-size="10.5" ${M} fill="${t[tone]}" letter-spacing=".5">${esc(issuer.toUpperCase())}</text>
+  <text x="${x + 40}" y="${y + 13}" font-size="10.5" ${M} fill="${t.bronze}" letter-spacing=".5">${esc(issuer.toUpperCase())}</text>
   <text x="${x + 40}" y="${y + 33}" font-size="15" ${D} fill="${t.text}">${esc(title)}</text>
   <text x="${x + 40}" y="${y + 50}" font-size="11.5" fill="${t.muted}">${esc(detail)}</text>
   </g>`;
@@ -860,7 +871,7 @@ function journeyCard(t) {
       : "";
     return `  <g class="p" style="animation-delay:${i * 90}ms">
   ${ping}<circle cx="${n1(x)}" cy="${y}" r="${last ? 7 : 5.5}" fill="${last ? t.pink : t.surface}" stroke="${tone}" stroke-width="2.5"/>
-  <text x="${n1(x)}" y="${y - 22}" text-anchor="middle" font-size="11.5" ${M} fill="${last ? t.pink : t.lavender}">${esc(when.toUpperCase())}</text>
+  <text x="${n1(x)}" y="${y - 22}" text-anchor="middle" font-size="11.5" ${M} fill="${last ? t.pink : t.bronze}">${esc(when.toUpperCase())}</text>
   <text x="${n1(x)}" y="${y + 32}" text-anchor="middle" font-size="14" ${D} fill="${t.text}">${esc(title)}</text>
   <text x="${n1(x)}" y="${y + 51}" text-anchor="middle" font-size="11.5" fill="${t.muted}">${esc(sub)}</text>
   </g>`;
@@ -902,7 +913,7 @@ function favouritesCard(t) {
         clips.push(`<clipPath id="${id}"><rect x="${n1(x)}" y="${y}" width="${pw}" height="${ph}" rx="12"/></clipPath>`);
         return `  <g class="p" style="animation-delay:${delay}ms">
     <image href="data:image/jpeg;base64,${data}" x="${n1(x)}" y="${y}" width="${pw}" height="${ph}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id})"/>
-    <rect x="${n1(x + 0.75)}" y="${y + 0.75}" width="${pw - 1.5}" height="${ph - 1.5}" rx="11.5" fill="none" stroke="${t.violet}" stroke-opacity=".55" stroke-width="1.5"/>
+    <rect x="${n1(x + 0.75)}" y="${y + 0.75}" width="${pw - 1.5}" height="${ph - 1.5}" rx="11.5" fill="none" stroke="${t.bronze}" stroke-opacity=".6" stroke-width="1.5"/>
     <text x="${n1(cx)}" y="${y + ph + 22}" text-anchor="middle" font-size="13.5" ${D} fill="${t.text}">${esc(name)}</text>
   </g>`;
       })
