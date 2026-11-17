@@ -1664,5 +1664,18 @@
    }
   }
  },
- "achievements": []
+ "achievements": [
+  {
+   "name": "Pair Extraordinaire",
+   "tier": 1
+  },
+  {
+   "name": "Pull Shark",
+   "tier": 2
+  },
+  {
+   "name": "YOLO",
+   "tier": 1
+  }
+ ]
 }
