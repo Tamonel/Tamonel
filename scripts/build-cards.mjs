@@ -8,8 +8,9 @@
 // The words on the cards are written by hand below. Every number comes from
 // data/stats.json, which the nightly workflow refreshes.
 //
-// The look: night sky. Deep indigo, a neon edge that runs magenta to violet to
-// cyan, a spinning portal in the header, and the year drawn as a spiral galaxy.
+// The look: night sky. Purple carries everything; cyan and magenta are small
+// accents for contrast (the portal's core, the comet, whatever is "now"). A
+// spinning portal in the header, and the year drawn as a spiral galaxy.
 // Type is Space Grotesk, with JetBrains Mono for labels and figures.
 //
 // GitHub shows README images without web fonts, so each card carries the
@@ -183,14 +184,14 @@ const PROJECTS = [
 
 // [issuer, title, detail, tone]
 const CERTS = [
-  ["Google Cloud", "Cybersecurity Certificate", "Launchpad Scholarship · 2026", "cyan"],
-  ["Amazon Web Services", "Cloud Practitioner", "AWS Certified · 2024", "cyan"],
-  ["IBM", "Cybersecurity Fundamentals", "2025", "cyan"],
-  ["ALX Africa", "Backend Development", "2025", "pink"],
+  ["Google Cloud", "Cybersecurity Certificate", "Launchpad Scholarship · 2026", "violet"],
+  ["Amazon Web Services", "Cloud Practitioner", "AWS Certified · 2024", "violet"],
+  ["IBM", "Cybersecurity Fundamentals", "2025", "violet"],
+  ["ALX Africa", "Backend Development", "2025", "violet"],
   ["Moringa School", "AI Essentials", "for Software Engineers · 2025", "violet"],
   ["Google", "Web Development", "Google Developer · 2024", "violet"],
-  ["ALX Africa", "Professional Foundations", "2025", "pink"],
-  ["ALX Africa", "Virtual Assistance", "2024", "pink"],
+  ["ALX Africa", "Professional Foundations", "2025", "violet"],
+  ["ALX Africa", "Virtual Assistance", "2024", "violet"],
   ["Safaricom", "Enterprise Customer Support", "Internship certificate · 2025", "violet"],
 ];
 
@@ -252,12 +253,13 @@ const THEMES = {
     track: "#221c45",
     pink: "#ff5fc8",
     violet: "#a07cff",
+    lavender: "#cbb8ff",
     cyan: "#45e3ff",
     onAccent: "#0d0b1f",
     star: "#ffffff",
     glow: 0.22,
     // Quiet to busy, for the galaxy and the grid.
-    levels: ["#2a2352", "#5a3fae", "#9b6bff", "#e05fe0", "#ff9ad9"],
+    levels: ["#2a2352", "#45338f", "#6a4ed0", "#a07cff", "#ff5fc8"],
   },
   light: {
     surface: "#fffdff",
@@ -269,14 +271,16 @@ const THEMES = {
     track: "#efe9fa",
     pink: "#c81e8c",
     violet: "#6a3fd8",
+    lavender: "#8b6ee8",
     cyan: "#0a7fa6",
     onAccent: "#ffffff",
     star: "#6a3fd8",
     glow: 0.1,
-    levels: ["#ece5f8", "#cdb6f4", "#9b6bff", "#c43bb8", "#c81e8c"],
+    levels: ["#ece5f8", "#d3c2f5", "#a88bf0", "#7048dc", "#c81e8c"],
   },
 };
-const GROUP_TONE = { wakandi: "cyan", client: "violet", personal: "pink", learning: "violet" };
+// The dot in each project's status pill: cyan for Wakandi, magenta for my own.
+const GROUP_DOT = { wakandi: "cyan", client: "pink", personal: "pink", learning: "lavender" };
 
 const FONTS = {
   display: { file: "fonts/space-grotesk-latin-700-normal.woff2", family: "TDisplay", weight: 700,
@@ -324,7 +328,7 @@ function frame(t, w, h, title, body, { css = "", defs = "" } = {}) {
   <title>${esc(title)}</title>
   <style>/*FONTS*/${css}</style>
   <defs>
-    <linearGradient id="edge" x1="0" x2="1"><stop offset="0" stop-color="${t.pink}"/><stop offset=".5" stop-color="${t.violet}"/><stop offset="1" stop-color="${t.cyan}"/></linearGradient>
+    <linearGradient id="edge" x1="0" x2="1"><stop offset="0" stop-color="${t.pink}"/><stop offset=".14" stop-color="${t.violet}"/><stop offset=".86" stop-color="${t.violet}"/><stop offset="1" stop-color="${t.cyan}"/></linearGradient>
     <radialGradient id="glow" cx="1" cy="0" r="1"><stop offset="0" stop-color="${t.violet}" stop-opacity="${t.glow}"/><stop offset=".6" stop-color="${t.violet}" stop-opacity="0"/></radialGradient>
     <clipPath id="card"><rect x="0.5" y="0.5" width="${w - 1}" height="${h - 1}" rx="16"/></clipPath>
 ${defs}
@@ -347,11 +351,11 @@ function heading(t, w, title, note = "") {
 }
 
 /** A pill with a dot and mono text, right-aligned at `right`. */
-function pill(t, right, y, text, tone) {
+function pill(t, right, y, text, tone, dot = tone) {
   const w = text.length * 11 * MONO + 30;
   const x = right - w;
   return `  <rect x="${n1(x)}" y="${y}" width="${n1(w)}" height="22" rx="11" fill="${t[tone]}" fill-opacity=".12" stroke="${t[tone]}" stroke-opacity=".55"/>
-  <circle cx="${n1(x + 12)}" cy="${y + 11}" r="3" fill="${t[tone]}"/>
+  <circle cx="${n1(x + 12)}" cy="${y + 11}" r="3" fill="${t[dot]}"/>
   <text x="${n1(x + 21)}" y="${y + 15}" font-size="11" ${M} fill="${t[tone]}">${esc(text)}</text>`;
 }
 
@@ -440,9 +444,9 @@ function headerCard(t) {
     )
     .join("\n");
 
-  const defs = `    <linearGradient id="name" x1="32" x2="640" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${t.text}"/><stop offset=".55" stop-color="${t.text}"/><stop offset=".8" stop-color="${t.pink}"/><stop offset="1" stop-color="${t.violet}"/></linearGradient>
-    <linearGradient id="ring0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${t.pink}"/><stop offset="1" stop-color="${t.cyan}"/></linearGradient>
-    <linearGradient id="ring1" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${t.violet}"/><stop offset="1" stop-color="${t.cyan}"/></linearGradient>
+  const defs = `    <linearGradient id="name" x1="32" x2="640" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${t.text}"/><stop offset=".5" stop-color="${t.text}"/><stop offset="1" stop-color="${t.lavender}"/></linearGradient>
+    <linearGradient id="ring0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${t.violet}"/><stop offset="1" stop-color="${t.lavender}"/></linearGradient>
+    <linearGradient id="ring1" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${t.violet}"/><stop offset=".7" stop-color="${t.violet}"/><stop offset="1" stop-color="${t.cyan}"/></linearGradient>
     <radialGradient id="core"><stop offset="0" stop-color="${t.star}" stop-opacity=".95"/><stop offset=".35" stop-color="${t.cyan}" stop-opacity=".7"/><stop offset="1" stop-color="${t.violet}" stop-opacity="0"/></radialGradient>
     <radialGradient id="halo"><stop offset="0" stop-color="${t.violet}" stop-opacity=".35"/><stop offset="1" stop-color="${t.violet}" stop-opacity="0"/></radialGradient>`;
 
@@ -451,14 +455,14 @@ function headerCard(t) {
   <circle cx="${px}" cy="${py}" r="96" fill="url(#halo)"/>
 ${rings}
   <circle class="pulse" cx="${px}" cy="${py}" r="20" fill="url(#core)"/>
-  <text x="34" y="52" font-size="11.5" ${M} fill="${t.cyan}" letter-spacing="1.5">${esc(HEADER.kicker)}</text>
+  <text x="34" y="52" font-size="11.5" ${M} fill="${t.lavender}" letter-spacing="1.5">${esc(HEADER.kicker)}</text>
   <text x="32" y="106" font-size="43" ${D} fill="url(#name)" letter-spacing="0.5">${esc(HEADER.name)}</text>
   <text x="34" y="140" font-size="17" fill="${t.secondary}">${esc(HEADER.line)}</text>
   <rect x="0" y="${bandY}" width="${w}" height="${h - bandY}" fill="${t.band}" clip-path="url(#card)"/>
   <line x1="0" y1="${bandY + 0.5}" x2="${w}" y2="${bandY + 0.5}" stroke="${t.border}"/>
   <circle class="pulse" cx="38" cy="${bandY + 33}" r="4" fill="${t.pink}"/>
   <text x="50" y="${bandY + 38}" font-size="11.5" ${M} fill="${t.muted}" letter-spacing="1">NOW BUILDING</text>
-  <text x="${x - 20}" y="${bandY + 38}" font-size="13" ${M} fill="${t.pink}">›</text>
+  <text x="${x - 20}" y="${bandY + 38}" font-size="13" ${M} fill="${t.violet}">›</text>
 ${items}
   <text x="${w - 30}" y="${bandY + 38}" text-anchor="end" font-size="12.5" ${M} fill="${t.secondary}">${esc(HEADER.focus)}</text>`;
   return frame(t, w, h, HEADER.name, body, { css: css + REDUCED, defs });
@@ -486,7 +490,7 @@ function statsCard(t) {
         ? `\n  <text class="n" style="animation-delay:${i * 90}ms" x="${n1(x + s.value.length * 22 + 6)}" y="116" font-size="16" fill="${t.secondary}">${s.unit}</text>`
         : "";
       return `${divider}  <text x="${x}" y="78" font-size="11" ${M} fill="${t.muted}" letter-spacing=".5">${esc(s.label.toUpperCase())}</text>
-  <text class="n" style="animation-delay:${i * 90}ms" x="${x - 1}" y="116" font-size="36" ${D} fill="${s.lead ? "url(#edge)" : t.text}">${esc(s.value)}</text>${unit}
+  <text class="n" style="animation-delay:${i * 90}ms" x="${x - 1}" y="116" font-size="36" ${D} fill="${s.lead ? t.violet : t.text}">${esc(s.value)}</text>${unit}
   <text x="${x}" y="136" font-size="12" fill="${t.muted}">${esc(s.note)}</text>`;
     })
     .join("\n");
@@ -500,11 +504,11 @@ ${cells}`;
 function projectCard(t, p) {
   const w = p.wide ? 860 : 420;
   const h = p.wide ? 220 : 226;
-  const tone = GROUP_TONE[p.group];
+  const dot = GROUP_DOT[p.group];
   const right = w - 24;
   const body = [
-    `  <text x="24" y="38" font-size="11" ${M} fill="${t[tone]}" letter-spacing="1">${esc(p.meta.toUpperCase())}</text>`,
-    pill(t, right, 22, p.status, tone),
+    `  <text x="24" y="38" font-size="11" ${M} fill="${t.lavender}" letter-spacing="1">${esc(p.meta.toUpperCase())}</text>`,
+    pill(t, right, 22, p.status, "violet", dot),
     `  <text x="23" y="76" font-size="25" ${D} fill="${t.text}">${esc(p.title)}</text>`,
     ...p.lines.map((line, i) => `  <text x="24" y="${106 + i * 21}" font-size="13.5" fill="${t.secondary}">${esc(line)}</text>`),
     `  <line x1="24" y1="${h - 58}" x2="${right}" y2="${h - 58}" stroke="${t.border}" stroke-dasharray="2 4"/>`,
@@ -559,7 +563,7 @@ function galaxyCard(t) {
   const ly = (16 + 214 * lastF) * Math.sin(lastA);
   const today = `<circle class="ping" style="transform-origin:${n1(lx)}px ${n1(ly)}px" cx="${n1(lx)}" cy="${n1(ly)}" r="5" fill="none" stroke="${t.pink}" stroke-width="1.5"/>`;
 
-  const defs = `    <radialGradient id="core"><stop offset="0" stop-color="${t.star}" stop-opacity=".9"/><stop offset=".25" stop-color="${t.pink}" stop-opacity=".45"/><stop offset=".6" stop-color="${t.violet}" stop-opacity=".12"/><stop offset="1" stop-color="${t.violet}" stop-opacity="0"/></radialGradient>`;
+  const defs = `    <radialGradient id="core"><stop offset="0" stop-color="${t.star}" stop-opacity=".9"/><stop offset=".25" stop-color="${t.lavender}" stop-opacity=".4"/><stop offset=".6" stop-color="${t.violet}" stop-opacity=".12"/><stop offset="1" stop-color="${t.violet}" stop-opacity="0"/></radialGradient>`;
 
   const busiest = DATA.months.reduce((a, b) => (b.count > a.count ? b : a));
   const facts = [
@@ -584,7 +588,7 @@ function galaxyCard(t) {
   const body = `${heading(t, w, "A year in orbit", "commits per day · last 12 months")}
 ${stars(t, rand, 60, { x: 300, y: 60, w: 540, h: 330 }, { twinkle: 10 })}
   <text x="24" y="94" font-size="11" ${M} fill="${t.muted}" letter-spacing=".5">CURRENT STREAK</text>
-  <text x="22" y="156" font-size="64" ${D} fill="url(#edge)">${DATA.streak.current}</text>
+  <text x="22" y="156" font-size="64" ${D} fill="${t.violet}">${DATA.streak.current}</text>
   <text x="${n1(26 + String(DATA.streak.current).length * 39)}" y="156" font-size="22" fill="${t.secondary}">${DATA.streak.current === 1 ? "day" : "days"}</text>
   <text x="24" y="184" font-size="13" fill="${t.muted}">${fmt(DATA.commits)} commits since ${esc(day(first))}</text>
 ${rows}
@@ -704,16 +708,16 @@ function linesCard(t) {
       const r = m.removed ? Math.max(2, (m.removed / max) * up) : 0;
       const delay = `style="animation-delay:${i * 40}ms"`;
       return [
-        a && `  <rect class="u" ${delay} x="${n1(x)}" y="${n1(base - a)}" width="${n1(bw)}" height="${n1(a)}" rx="2" fill="${t.pink}"/>`,
-        r && `  <rect class="dn" ${delay} x="${n1(x)}" y="${base + 1}" width="${n1(bw)}" height="${n1(r)}" rx="2" fill="${t.violet}" fill-opacity=".7"/>`,
+        a && `  <rect class="u" ${delay} x="${n1(x)}" y="${n1(base - a)}" width="${n1(bw)}" height="${n1(a)}" rx="2" fill="${t.violet}"/>`,
+        r && `  <rect class="dn" ${delay} x="${n1(x)}" y="${base + 1}" width="${n1(bw)}" height="${n1(r)}" rx="2" fill="${t.muted}" fill-opacity=".55"/>`,
         `  <text x="${n1(x + bw / 2)}" y="${h - 18}" text-anchor="middle" font-size="10" ${M} fill="${t.muted}">${monthName(m.month, "narrow")}</text>`,
       ].filter(Boolean).join("\n");
     })
     .join("\n");
   const added = `+${kilo(L.added)}`;
   const body = `${heading(t, w, "Lines changed", "last 12 months")}
-  <text x="22" y="100" font-size="44" ${D} fill="${t.pink}">${added}</text>
-  <text x="${n1(34 + added.length * 28)}" y="100" font-size="24" ${D} fill="${t.violet}">−${kilo(L.removed)}</text>
+  <text x="22" y="100" font-size="44" ${D} fill="${t.violet}">${added}</text>
+  <text x="${n1(34 + added.length * 28)}" y="100" font-size="24" ${D} fill="${t.muted}">−${kilo(L.removed)}</text>
   <text x="24" y="122" font-size="11.5" fill="${t.muted}">${L.bulkSkipped ? `Leaving out ${L.bulkSkipped} bulk commits: imports and generated files` : "Added and removed"}</text>
 ${bars}
   <line x1="24" y1="${base + 0.5}" x2="${w - 24}" y2="${base + 0.5}" stroke="${t.border}"/>`;
@@ -738,12 +742,12 @@ function sourceCard(t) {
   <text x="222" y="${y + 34}" font-size="11.5" fill="${t.muted}">${esc(line2)}</text>`;
   const body = `${heading(t, w, "Where my commits go", "last 12 months")}
   <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${t.track}" stroke-width="18"/>
-  <circle class="arc" cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${t.pink}" stroke-width="18" stroke-dasharray="${n1(C)} ${n1(C)}" transform="rotate(-90 ${cx} ${cy})"/>
-  <circle class="arc" cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${t.cyan}" stroke-width="18" stroke-dasharray="${n1(teamLen)} ${n1(C)}" transform="rotate(-90 ${cx} ${cy})"/>
+  <circle class="arc" cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${t.cyan}" stroke-width="18" stroke-dasharray="${n1(C)} ${n1(C)}" transform="rotate(-90 ${cx} ${cy})"/>
+  <circle class="arc" cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${t.violet}" stroke-width="18" stroke-dasharray="${n1(teamLen)} ${n1(C)}" transform="rotate(-90 ${cx} ${cy})"/>
   <text x="${cx}" y="${cy + 6}" text-anchor="middle" font-size="30" ${D} fill="${t.text}">${fmt(total)}</text>
   <text x="${cx}" y="${cy + 26}" text-anchor="middle" font-size="11" ${M} fill="${t.muted}">commits</text>
-${row(118, "cyan", "Wakandi", team, "Jamii Connect, CRB Lookup,", "Jamii Studio, Waypoint")}
-${row(196, "pink", "Personal & client", personal, "MemberPulse, Expert RN Scholars,", "Sheria AI, EA Outreach")}`;
+${row(118, "violet", "Wakandi", team, "Jamii Connect, CRB Lookup,", "Jamii Studio, Waypoint")}
+${row(196, "cyan", "Personal & client", personal, "MemberPulse, Expert RN Scholars,", "Sheria AI, EA Outreach")}`;
   return frame(t, w, h, "Where my commits go", body, { css: css + REDUCED });
 }
 
@@ -751,7 +755,7 @@ function languagesCard(t) {
   const w = 425;
   const h = 280;
   const langs = DATA.languages.filter((l) => l.pct >= 0.5).slice(0, 6);
-  const tones = [t.pink, t.violet, t.cyan, t.secondary, t.muted, t.muted];
+  const tones = [t.violet, t.lavender, t.cyan, t.secondary, t.muted, t.muted];
   const total = langs.reduce((s, l) => s + l.pct, 0);
   let bx = 24;
   const barW = w - 48;
@@ -779,7 +783,7 @@ function languagesCard(t) {
 ${rows}
   <line x1="24" y1="${h - 46}" x2="${w - 24}" y2="${h - 46}" stroke="${t.border}"/>
   <text x="24" y="${h - 22}" font-size="11.5" fill="${t.muted}">Last 60 days</text>
-  <text x="${w - 24}" y="${h - 22}" text-anchor="end" font-size="11.5" ${M} fill="${t.pink}">${esc(recent)}</text>`;
+  <text x="${w - 24}" y="${h - 22}" text-anchor="end" font-size="11.5" ${M} fill="${t.lavender}">${esc(recent)}</text>`;
   return frame(t, w, h, "Languages I write", body);
 }
 
@@ -792,7 +796,7 @@ function weekdaysCard(t) {
   const chartH = 136;
   const step = (w - 48) / list.length;
   const css = `.u{transform-box:fill-box;transform-origin:50% 100%;animation:g .8s cubic-bezier(.2,.7,.2,1) both}@keyframes g{from{transform:scaleY(0)}}`;
-  const defs = `    <linearGradient id="bar" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="${t.violet}"/><stop offset="1" stop-color="${t.pink}"/></linearGradient>`;
+  const defs = `    <linearGradient id="bar" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="${t.violet}"/><stop offset="1" stop-color="${t.lavender}"/></linearGradient>`;
   const bars = list
     .map(([name, n], i) => {
       const x = 24 + i * step + step * 0.24;
@@ -800,7 +804,7 @@ function weekdaysCard(t) {
       const bh = Math.max(2, (n / max) * chartH);
       const lead = n === max;
       return `  <rect class="u" style="animation-delay:${i * 60}ms" x="${n1(x)}" y="${n1(base - bh)}" width="${n1(bw)}" height="${n1(bh)}" rx="4" fill="${lead ? "url(#bar)" : t.violet}" fill-opacity="${lead ? 1 : 0.45}"/>
-  <text x="${n1(x + bw / 2)}" y="${n1(base - bh - 7)}" text-anchor="middle" font-size="11" ${M} fill="${lead ? t.pink : t.secondary}">${n}</text>
+  <text x="${n1(x + bw / 2)}" y="${n1(base - bh - 7)}" text-anchor="middle" font-size="11" ${M} fill="${lead ? t.lavender : t.secondary}">${n}</text>
   <text x="${n1(x + bw / 2)}" y="${base + 20}" text-anchor="middle" font-size="11.5" fill="${t.muted}">${name}</text>`;
     })
     .join("\n");
@@ -856,7 +860,7 @@ function journeyCard(t) {
       : "";
     return `  <g class="p" style="animation-delay:${i * 90}ms">
   ${ping}<circle cx="${n1(x)}" cy="${y}" r="${last ? 7 : 5.5}" fill="${last ? t.pink : t.surface}" stroke="${tone}" stroke-width="2.5"/>
-  <text x="${n1(x)}" y="${y - 22}" text-anchor="middle" font-size="11.5" ${M} fill="${last ? t.pink : t.cyan}">${esc(when.toUpperCase())}</text>
+  <text x="${n1(x)}" y="${y - 22}" text-anchor="middle" font-size="11.5" ${M} fill="${last ? t.pink : t.lavender}">${esc(when.toUpperCase())}</text>
   <text x="${n1(x)}" y="${y + 32}" text-anchor="middle" font-size="14" ${D} fill="${t.text}">${esc(title)}</text>
   <text x="${n1(x)}" y="${y + 51}" text-anchor="middle" font-size="11.5" fill="${t.muted}">${esc(sub)}</text>
   </g>`;
@@ -898,7 +902,7 @@ function favouritesCard(t) {
         clips.push(`<clipPath id="${id}"><rect x="${n1(x)}" y="${y}" width="${pw}" height="${ph}" rx="12"/></clipPath>`);
         return `  <g class="p" style="animation-delay:${delay}ms">
     <image href="data:image/jpeg;base64,${data}" x="${n1(x)}" y="${y}" width="${pw}" height="${ph}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id})"/>
-    <rect x="${n1(x + 0.75)}" y="${y + 0.75}" width="${pw - 1.5}" height="${ph - 1.5}" rx="11.5" fill="none" stroke="${tone}" stroke-opacity=".75" stroke-width="1.5"/>
+    <rect x="${n1(x + 0.75)}" y="${y + 0.75}" width="${pw - 1.5}" height="${ph - 1.5}" rx="11.5" fill="none" stroke="${t.violet}" stroke-opacity=".55" stroke-width="1.5"/>
     <text x="${n1(cx)}" y="${y + ph + 22}" text-anchor="middle" font-size="13.5" ${D} fill="${t.text}">${esc(name)}</text>
   </g>`;
       })
@@ -956,8 +960,8 @@ for (const [theme, t] of Object.entries(THEMES)) {
   add("journey", journeyCard(t));
   add("favourites", favouritesCard(t));
   add("contact", contactCard(t));
-  add("linkedin", buttonCard(t, "Connect on LinkedIn", "linkedin.com/in/motachikelvin", "cyan", ICON_LINKEDIN));
-  add("email", buttonCard(t, "Email me", EMAIL, "pink", ICON_EMAIL));
+  add("linkedin", buttonCard(t, "Connect on LinkedIn", "linkedin.com/in/motachikelvin", "violet", ICON_LINKEDIN));
+  add("email", buttonCard(t, "Email me", EMAIL, "violet", ICON_EMAIL));
 }
 
 // Cut each font down to the characters the cards draw.
