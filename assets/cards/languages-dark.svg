@@ -16,27 +16,27 @@
   </g>
   <text x="24" y="42" font-size="19" font-family="TDisplay, 'Space Grotesk', 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" fill="#f6eee8">Languages I write</text>
   <text x="401" y="41" text-anchor="end" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#98847d">weighted by my commits</text>
-  <rect x="24" y="64" width="220.4" height="12" rx="4" fill="#a07cff"/><rect x="246.4" y="64" width="70" height="12" rx="4" fill="#c8955f"/><rect x="318.4" y="64" width="51.5" height="12" rx="4" fill="#cbb8ff"/><rect x="372" y="64" width="12.7" height="12" rx="4" fill="#45e3ff"/><rect x="386.7" y="64" width="8.9" height="12" rx="4" fill="#6e4c3c"/><rect x="397.6" y="64" width="1.4" height="12" rx="4" fill="#98847d"/>
+  <rect x="24" y="64" width="218" height="12" rx="4" fill="#a07cff"/><rect x="244" y="64" width="67.1" height="12" rx="4" fill="#c8955f"/><rect x="313.1" y="64" width="50.8" height="12" rx="4" fill="#cbb8ff"/><rect x="365.9" y="64" width="12" height="12" rx="4" fill="#45e3ff"/><rect x="379.9" y="64" width="8.6" height="12" rx="4" fill="#6e4c3c"/><rect x="390.4" y="64" width="8.6" height="12" rx="4" fill="#98847d"/>
   <circle cx="29" cy="116" r="5" fill="#a07cff"/>
   <text x="42" y="120" font-size="13.5" fill="#f6eee8">TypeScript</text>
-  <text x="202" y="120" text-anchor="end" font-size="12" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">59.0%</text>
+  <text x="202" y="120" text-anchor="end" font-size="12" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">58.3%</text>
   <circle cx="225" cy="116" r="5" fill="#c8955f"/>
   <text x="238" y="120" font-size="13.5" fill="#f6eee8">Python</text>
-  <text x="398" y="120" text-anchor="end" font-size="12" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">19.1%</text>
+  <text x="398" y="120" text-anchor="end" font-size="12" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">18.3%</text>
   <circle cx="29" cy="154" r="5" fill="#cbb8ff"/>
   <text x="42" y="158" font-size="13.5" fill="#f6eee8">PLpgSQL</text>
-  <text x="202" y="158" text-anchor="end" font-size="12" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">14.2%</text>
+  <text x="202" y="158" text-anchor="end" font-size="12" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">14.0%</text>
   <circle cx="225" cy="154" r="5" fill="#45e3ff"/>
   <text x="238" y="158" font-size="13.5" fill="#f6eee8">JavaScript</text>
-  <text x="398" y="158" text-anchor="end" font-size="12" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">3.9%</text>
+  <text x="398" y="158" text-anchor="end" font-size="12" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">3.7%</text>
   <circle cx="29" cy="192" r="5" fill="#6e4c3c"/>
-  <text x="42" y="196" font-size="13.5" fill="#f6eee8">CSS</text>
-  <text x="202" y="196" text-anchor="end" font-size="12" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">2.9%</text>
+  <text x="42" y="196" font-size="13.5" fill="#f6eee8">HTML</text>
+  <text x="202" y="196" text-anchor="end" font-size="12" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">2.8%</text>
   <circle cx="225" cy="192" r="5" fill="#98847d"/>
-  <text x="238" y="196" font-size="13.5" fill="#f6eee8">HTML</text>
-  <text x="398" y="196" text-anchor="end" font-size="12" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">0.9%</text>
+  <text x="238" y="196" font-size="13.5" fill="#f6eee8">CSS</text>
+  <text x="398" y="196" text-anchor="end" font-size="12" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">2.8%</text>
   <line x1="24" y1="234" x2="401" y2="234" stroke="#3a2c33"/>
   <text x="24" y="258" font-size="11.5" fill="#98847d">Last 60 days</text>
-  <text x="401" y="258" text-anchor="end" font-size="11.5" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cbb8ff">TypeScript 74% · PLpgSQL 17%</text>
+  <text x="401" y="258" text-anchor="end" font-size="11.5" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cbb8ff">TypeScript 72% · PLpgSQL 17%</text>
   <rect x="0.5" y="0.5" width="424" height="279" rx="16" fill="none" stroke="#3a2c33"/>
 </svg>

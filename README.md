@@ -7,7 +7,7 @@
 <p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/cards/stats-dark.svg">
-    <img src="assets/cards/stats-light.svg" alt="239 commits in the last 12 months, private work included; 17 of 17 pull requests merged; current streak 10 days (longest 10); 94,630 lines added and 11,910 removed; 42 active days in 12 repos. Updated 17 Nov 2026." width="100%">
+    <img src="assets/cards/stats-light.svg" alt="241 commits in the last 12 months, private work included; 17 of 17 pull requests merged; current streak 10 days (longest 10); 94,635 lines added and 12,276 removed; 42 active days in 12 repos. Updated 18 Nov 2026." width="100%">
   </picture>
 </p>
 <!-- /live:stats -->
@@ -102,7 +102,7 @@ These count my commits in private repos too, including the ones on Wakandi's own
 <p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/cards/galaxy-dark.svg">
-    <img src="assets/cards/galaxy-light.svg" alt="A year of commits drawn as a spiral galaxy, one star per day. By month: Nov 18, Dec 7, Apr 1, Aug 11, Sept 71, Oct 19, Nov 112. Busiest month November with 112; best day 25 commits on 10 Sept 2026; current streak 10 days, longest 10." width="100%">
+    <img src="assets/cards/galaxy-light.svg" alt="A year of commits drawn as a spiral galaxy, one star per day. By month: Nov 18, Dec 7, Apr 1, Aug 11, Sept 71, Oct 19, Nov 114. Busiest month November with 114; best day 25 commits on 10 Sept 2026; current streak 10 days, longest 10." width="100%">
   </picture>
 </p>
 <p>
@@ -114,21 +114,21 @@ These count my commits in private repos too, including the ones on Wakandi's own
 <p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/cards/sources-dark.svg">
-    <img src="assets/cards/sources-light.svg" alt="Where my commits go: 178 to Wakandi (Jamii Connect, CRB Lookup, Jamii Studio, Waypoint) and 61 to personal and client projects." width="49%">
+    <img src="assets/cards/sources-light.svg" alt="Where my commits go: 178 to Wakandi (Jamii Connect, CRB Lookup, Jamii Studio, Waypoint) and 63 to personal and client projects." width="49%">
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/cards/lines-dark.svg">
-    <img src="assets/cards/lines-light.svg" alt="Lines changed in the last 12 months: 94,630 added and 11,910 removed, leaving out 10 bulk commits." width="49%">
+    <img src="assets/cards/lines-light.svg" alt="Lines changed in the last 12 months: 94,635 added and 12,276 removed, leaving out 11 bulk commits." width="49%">
   </picture>
 </p>
 <p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/cards/languages-dark.svg">
-    <img src="assets/cards/languages-light.svg" alt="Languages, weighted by my commits: TypeScript 59%, Python 19.1%, PLpgSQL 14.2%, JavaScript 3.9%, CSS 2.9%, HTML 0.9%." width="49%">
+    <img src="assets/cards/languages-light.svg" alt="Languages, weighted by my commits: TypeScript 58.3%, Python 18.3%, PLpgSQL 14%, JavaScript 3.7%, HTML 2.8%, CSS 2.8%." width="49%">
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/cards/weekdays-dark.svg">
-    <img src="assets/cards/weekdays-light.svg" alt="Commits by weekday: Mon 54, Tue 58, Wed 30, Thu 52, Fri 28, Sat 4, Sun 13." width="49%">
+    <img src="assets/cards/weekdays-light.svg" alt="Commits by weekday: Mon 54, Tue 60, Wed 30, Thu 52, Fri 28, Sat 4, Sun 13." width="49%">
   </picture>
 </p>
 <!-- /live:year -->

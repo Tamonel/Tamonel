@@ -18,7 +18,7 @@
   <text x="401" y="41" text-anchor="end" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#98847d">last 12 months</text>
   <text x="22" y="100" font-size="44" font-family="TDisplay, 'Space Grotesk', 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" fill="#a07cff">+95k</text>
   <text x="146" y="100" font-size="24" font-family="TDisplay, 'Space Grotesk', 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" fill="#c8955f">−12k</text>
-  <text x="24" y="122" font-size="11.5" fill="#98847d">Leaving out 10 bulk commits: imports and generated files</text>
+  <text x="24" y="122" font-size="11.5" fill="#98847d">Leaving out 11 bulk commits: imports and generated files</text>
   <rect class="u" style="animation-delay:0ms" x="30.9" y="194" width="17.6" height="2" rx="2" fill="#a07cff"/>
   <rect class="dn" style="animation-delay:0ms" x="30.9" y="197" width="17.6" height="2" rx="2" fill="#c8955f" fill-opacity=".6"/>
   <text x="39.7" y="262" text-anchor="middle" font-size="10" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#98847d">D</text>
@@ -39,7 +39,7 @@
   <rect class="dn" style="animation-delay:400ms" x="345.1" y="197" width="17.6" height="2" rx="2" fill="#c8955f" fill-opacity=".6"/>
   <text x="353.9" y="262" text-anchor="middle" font-size="10" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#98847d">O</text>
   <rect class="u" style="animation-delay:440ms" x="376.5" y="138" width="17.6" height="58" rx="2" fill="#a07cff"/>
-  <rect class="dn" style="animation-delay:440ms" x="376.5" y="197" width="17.6" height="8.6" rx="2" fill="#c8955f" fill-opacity=".6"/>
+  <rect class="dn" style="animation-delay:440ms" x="376.5" y="197" width="17.6" height="9.2" rx="2" fill="#c8955f" fill-opacity=".6"/>
   <text x="385.3" y="262" text-anchor="middle" font-size="10" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#98847d">N</text>
   <line x1="24" y1="196.5" x2="401" y2="196.5" stroke="#3a2c33"/>
   <rect x="0.5" y="0.5" width="424" height="279" rx="16" fill="none" stroke="#3a2c33"/>

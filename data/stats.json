@@ -1,13 +1,13 @@
 {
  "login": "Tamonel",
- "updated": "2026-11-17",
+ "updated": "2026-11-18",
  "memberSince": "2023-03-30",
- "commits": 239,
- "commitsOnGitHub": 144,
+ "commits": 241,
+ "commitsOnGitHub": 146,
  "commitsElsewhere": 95,
  "bySource": {
   "team": 178,
-  "personal": 61
+  "personal": 63
  },
  "elsewhereUpdated": "2026-11-17",
  "pullRequests": 17,
@@ -31,7 +31,7 @@
   ],
   [
    "Tue",
-   58
+   60
   ],
   [
    "Wed",
@@ -105,14 +105,10 @@
   },
   {
    "month": "2026-11",
-   "count": 112
+   "count": 114
   }
  ],
  "days": [
-  {
-   "date": "2025-11-17",
-   "count": 0
-  },
   {
    "date": "2025-11-18",
    "count": 12
@@ -1571,73 +1567,81 @@
   },
   {
    "date": "2026-11-17",
-   "count": 3
+   "count": 5
+  },
+  {
+   "date": "2026-11-18",
+   "count": 0
   }
  ],
  "languages": [
   {
    "name": "TypeScript",
-   "pct": 59,
+   "pct": 58.3,
    "color": "#3178c6"
   },
   {
    "name": "Python",
-   "pct": 19.1,
+   "pct": 18.3,
    "color": "#3572A5"
   },
   {
    "name": "PLpgSQL",
-   "pct": 14.2,
+   "pct": 14,
    "color": "#336790"
   },
   {
    "name": "JavaScript",
-   "pct": 3.9,
+   "pct": 3.7,
    "color": "#f1e05a"
-  },
-  {
-   "name": "CSS",
-   "pct": 2.9,
-   "color": "#663399"
   },
   {
    "name": "HTML",
-   "pct": 0.9,
+   "pct": 2.8,
    "color": "#e34c26"
-  },
-  {
-   "name": "PowerShell",
-   "pct": 0,
-   "color": "#012456"
-  }
- ],
- "recentLanguages": [
-  {
-   "name": "TypeScript",
-   "pct": 74.4,
-   "color": "#3178c6"
-  },
-  {
-   "name": "PLpgSQL",
-   "pct": 17.1,
-   "color": "#336790"
-  },
-  {
-   "name": "JavaScript",
-   "pct": 3.5,
-   "color": "#f1e05a"
   },
   {
    "name": "CSS",
    "pct": 2.8,
    "color": "#663399"
+  },
+  {
+   "name": "Dockerfile",
+   "pct": 0,
+   "color": "#384d54"
+  }
+ ],
+ "recentLanguages": [
+  {
+   "name": "TypeScript",
+   "pct": 72.4,
+   "color": "#3178c6"
+  },
+  {
+   "name": "PLpgSQL",
+   "pct": 16.6,
+   "color": "#336790"
+  },
+  {
+   "name": "Python",
+   "pct": 3.8,
+   "color": "#3572A5"
+  },
+  {
+   "name": "JavaScript",
+   "pct": 3.4,
+   "color": "#f1e05a"
   }
  ],
  "lines": {
-  "added": 94630,
-  "removed": 11910,
-  "bulkSkipped": 10,
+  "added": 94635,
+  "removed": 12276,
+  "bulkSkipped": 11,
   "byMonth": {
+   "2026-11": {
+    "added": 41333,
+    "removed": 6528
+   },
    "2026-08": {
     "added": 7695,
     "removed": 921
@@ -1657,10 +1661,6 @@
    "2026-09": {
     "added": 23441,
     "removed": 3242
-   },
-   "2026-11": {
-    "added": 41328,
-    "removed": 6162
    }
   }
  },
