@@ -18,26 +18,26 @@
   <text x="401" y="41" text-anchor="end" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#98847d">commits by weekday</text>
   <line x1="24" y1="164" x2="401" y2="164" stroke="#2a2026"/>
   <line x1="24" y1="232" x2="401" y2="232" stroke="#3a2c33"/>
-  <rect class="u" style="animation-delay:0ms" x="36.9" y="109.6" width="28" height="122.4" rx="4" fill="#a07cff" fill-opacity="0.4"/>
-  <text x="50.9" y="102.6" text-anchor="middle" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">54</text>
+  <rect class="u" style="animation-delay:0ms" x="36.9" y="96" width="28" height="136" rx="4" fill="url(#bar)" fill-opacity="1"/>
+  <text x="50.9" y="89" text-anchor="middle" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cbb8ff">54</text>
   <text x="50.9" y="252" text-anchor="middle" font-size="11.5" fill="#98847d">Mon</text>
-  <rect class="u" style="animation-delay:60ms" x="90.8" y="96" width="28" height="136" rx="4" fill="url(#bar)" fill-opacity="1"/>
-  <text x="104.8" y="89" text-anchor="middle" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cbb8ff">60</text>
+  <rect class="u" style="animation-delay:60ms" x="90.8" y="111.1" width="28" height="120.9" rx="4" fill="#a07cff" fill-opacity="0.4"/>
+  <text x="104.8" y="104.1" text-anchor="middle" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">48</text>
   <text x="104.8" y="252" text-anchor="middle" font-size="11.5" fill="#98847d">Tue</text>
-  <rect class="u" style="animation-delay:120ms" x="144.6" y="164" width="28" height="68" rx="4" fill="#a07cff" fill-opacity="0.4"/>
-  <text x="158.6" y="157" text-anchor="middle" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">30</text>
+  <rect class="u" style="animation-delay:120ms" x="144.6" y="153.9" width="28" height="78.1" rx="4" fill="#a07cff" fill-opacity="0.4"/>
+  <text x="158.6" y="146.9" text-anchor="middle" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">31</text>
   <text x="158.6" y="252" text-anchor="middle" font-size="11.5" fill="#98847d">Wed</text>
-  <rect class="u" style="animation-delay:180ms" x="198.5" y="114.1" width="28" height="117.9" rx="4" fill="#a07cff" fill-opacity="0.4"/>
-  <text x="212.5" y="107.1" text-anchor="middle" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">52</text>
+  <rect class="u" style="animation-delay:180ms" x="198.5" y="101" width="28" height="131" rx="4" fill="#a07cff" fill-opacity="0.4"/>
+  <text x="212.5" y="94" text-anchor="middle" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">52</text>
   <text x="212.5" y="252" text-anchor="middle" font-size="11.5" fill="#98847d">Thu</text>
-  <rect class="u" style="animation-delay:240ms" x="252.4" y="168.5" width="28" height="63.5" rx="4" fill="#a07cff" fill-opacity="0.4"/>
-  <text x="266.4" y="161.5" text-anchor="middle" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">28</text>
+  <rect class="u" style="animation-delay:240ms" x="252.4" y="161.5" width="28" height="70.5" rx="4" fill="#a07cff" fill-opacity="0.4"/>
+  <text x="266.4" y="154.5" text-anchor="middle" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">28</text>
   <text x="266.4" y="252" text-anchor="middle" font-size="11.5" fill="#98847d">Fri</text>
-  <rect class="u" style="animation-delay:300ms" x="306.2" y="222.9" width="28" height="9.1" rx="4" fill="#a07cff" fill-opacity="0.4"/>
-  <text x="320.2" y="215.9" text-anchor="middle" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">4</text>
+  <rect class="u" style="animation-delay:300ms" x="306.2" y="221.9" width="28" height="10.1" rx="4" fill="#a07cff" fill-opacity="0.4"/>
+  <text x="320.2" y="214.9" text-anchor="middle" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">4</text>
   <text x="320.2" y="252" text-anchor="middle" font-size="11.5" fill="#98847d">Sat</text>
-  <rect class="u" style="animation-delay:360ms" x="360.1" y="202.5" width="28" height="29.5" rx="4" fill="#a07cff" fill-opacity="0.4"/>
-  <text x="374.1" y="195.5" text-anchor="middle" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">13</text>
+  <rect class="u" style="animation-delay:360ms" x="360.1" y="199.3" width="28" height="32.7" rx="4" fill="#a07cff" fill-opacity="0.4"/>
+  <text x="374.1" y="192.3" text-anchor="middle" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#cdbcb4">13</text>
   <text x="374.1" y="252" text-anchor="middle" font-size="11.5" fill="#98847d">Sun</text>
   <rect x="0.5" y="0.5" width="424" height="279" rx="16" fill="none" stroke="#3a2c33"/>
 </svg>

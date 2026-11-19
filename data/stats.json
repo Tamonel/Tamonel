@@ -1,28 +1,28 @@
 {
  "login": "Tamonel",
- "updated": "2026-11-18",
+ "updated": "2026-11-19",
  "memberSince": "2023-03-30",
- "commits": 241,
- "commitsOnGitHub": 146,
+ "commits": 230,
+ "commitsOnGitHub": 135,
  "commitsElsewhere": 95,
  "bySource": {
   "team": 178,
-  "personal": 63
+  "personal": 52
  },
  "elsewhereUpdated": "2026-11-17",
- "pullRequests": 17,
- "pullRequestsMerged": 17,
+ "pullRequests": 18,
+ "pullRequestsMerged": 18,
  "repositories": 20,
  "reposThisYear": 12,
  "activeDays": 42,
- "firstActive": "2025-11-18",
+ "firstActive": "2025-11-24",
  "bestDay": {
   "date": "2026-09-10",
   "count": 25
  },
  "streak": {
-  "current": 10,
-  "longest": 10
+  "current": 11,
+  "longest": 11
  },
  "weekdays": [
   [
@@ -31,11 +31,11 @@
   ],
   [
    "Tue",
-   60
+   48
   ],
   [
    "Wed",
-   30
+   31
   ],
   [
    "Thu",
@@ -57,7 +57,7 @@
  "months": [
   {
    "month": "2025-11",
-   "count": 18
+   "count": 6
   },
   {
    "month": "2025-12",
@@ -105,14 +105,10 @@
   },
   {
    "month": "2026-11",
-   "count": 114
+   "count": 115
   }
  ],
  "days": [
-  {
-   "date": "2025-11-18",
-   "count": 12
-  },
   {
    "date": "2025-11-19",
    "count": 0
@@ -1571,39 +1567,43 @@
   },
   {
    "date": "2026-11-18",
+   "count": 1
+  },
+  {
+   "date": "2026-11-19",
    "count": 0
   }
  ],
  "languages": [
   {
    "name": "TypeScript",
-   "pct": 58.3,
+   "pct": 62.9,
    "color": "#3178c6"
   },
   {
-   "name": "Python",
-   "pct": 18.3,
-   "color": "#3572A5"
-  },
-  {
    "name": "PLpgSQL",
-   "pct": 14,
+   "pct": 15,
    "color": "#336790"
   },
   {
+   "name": "Python",
+   "pct": 13.1,
+   "color": "#3572A5"
+  },
+  {
    "name": "JavaScript",
-   "pct": 3.7,
+   "pct": 3.9,
    "color": "#f1e05a"
   },
   {
-   "name": "HTML",
-   "pct": 2.8,
-   "color": "#e34c26"
+   "name": "CSS",
+   "pct": 3,
+   "color": "#663399"
   },
   {
-   "name": "CSS",
-   "pct": 2.8,
-   "color": "#663399"
+   "name": "HTML",
+   "pct": 2,
+   "color": "#e34c26"
   },
   {
    "name": "Dockerfile",
@@ -1614,17 +1614,17 @@
  "recentLanguages": [
   {
    "name": "TypeScript",
-   "pct": 72.4,
+   "pct": 72.7,
    "color": "#3178c6"
   },
   {
    "name": "PLpgSQL",
-   "pct": 16.6,
+   "pct": 16.4,
    "color": "#336790"
   },
   {
    "name": "Python",
-   "pct": 3.8,
+   "pct": 3.7,
    "color": "#3572A5"
   },
   {
@@ -1634,9 +1634,9 @@
   }
  ],
  "lines": {
-  "added": 94635,
-  "removed": 12276,
-  "bulkSkipped": 11,
+  "added": 94279,
+  "removed": 11793,
+  "bulkSkipped": 12,
   "byMonth": {
    "2026-11": {
     "added": 41333,
@@ -1651,8 +1651,8 @@
     "removed": 73
    },
    "2025-11": {
-    "added": 653,
-    "removed": 511
+    "added": 297,
+    "removed": 28
    },
    "2026-10": {
     "added": 20255,
