@@ -7,7 +7,7 @@
 <p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/cards/stats-dark.svg">
-    <img src="assets/cards/stats-light.svg" alt="230 commits in the last 12 months, private work included; 18 of 18 pull requests merged; current streak 11 days (longest 11); 94,279 lines added and 11,793 removed; 42 active days in 12 repos. Updated 19 Nov 2026." width="100%">
+    <img src="assets/cards/stats-light.svg" alt="230 commits in the last 12 months, private work included; 18 of 18 pull requests merged; current streak 0 days (longest 11); 94,279 lines added and 11,793 removed; 42 active days in 12 repos. Updated 20 Nov 2026." width="100%">
   </picture>
 </p>
 <!-- /live:stats -->
@@ -102,7 +102,7 @@ These count my commits in private repos too, including the ones on Wakandi's own
 <p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/cards/galaxy-dark.svg">
-    <img src="assets/cards/galaxy-light.svg" alt="A year of commits drawn as a spiral galaxy, one star per day. By month: Nov 6, Dec 7, Apr 1, Aug 11, Sept 71, Oct 19, Nov 115. Busiest month November with 115; best day 25 commits on 10 Sept 2026; current streak 11 days, longest 11." width="100%">
+    <img src="assets/cards/galaxy-light.svg" alt="A year of commits drawn as a spiral galaxy, one star per day. By month: Nov 6, Dec 7, Apr 1, Aug 11, Sept 71, Oct 19, Nov 115. Busiest month November with 115; best day 25 commits on 10 Sept 2026; current streak 0 days, longest 11." width="100%">
   </picture>
 </p>
 <p>
