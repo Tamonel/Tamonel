@@ -7,7 +7,7 @@
 <p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/cards/stats-dark.svg">
-    <img src="assets/cards/stats-light.svg" alt="230 commits in the last 12 months, private work included; 18 of 18 pull requests merged; current streak 0 days (longest 11); 94,279 lines added and 11,793 removed; 42 active days in 12 repos. Updated 23 Nov 2026." width="100%">
+    <img src="assets/cards/stats-light.svg" alt="224 commits in the last 12 months, private work included; 18 of 18 pull requests merged; current streak 0 days (longest 11); 93,982 lines added and 11,765 removed; 41 active days in 12 repos. Updated 24 Nov 2026." width="100%">
   </picture>
 </p>
 <!-- /live:stats -->
@@ -102,33 +102,33 @@ These count my commits in private repos too, including the ones on Wakandi's own
 <p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/cards/galaxy-dark.svg">
-    <img src="assets/cards/galaxy-light.svg" alt="A year of commits drawn as a spiral galaxy, one star per day. By month: Nov 6, Dec 7, Apr 1, Aug 11, Sept 71, Oct 19, Nov 115. Busiest month November with 115; best day 25 commits on 10 Sept 2026; current streak 0 days, longest 11." width="100%">
+    <img src="assets/cards/galaxy-light.svg" alt="A year of commits drawn as a spiral galaxy, one star per day. By month: Dec 7, Apr 1, Aug 11, Sept 71, Oct 19, Nov 115. Busiest month November with 115; best day 25 commits on 10 Sept 2026; current streak 0 days, longest 11." width="100%">
   </picture>
 </p>
 <p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/cards/comet-dark.svg">
-    <img src="assets/cards/comet-light.svg" alt="The contribution grid for the last 12 months, with a comet that flies through it eating the 42 days I committed." width="100%">
+    <img src="assets/cards/comet-light.svg" alt="The contribution grid for the last 12 months, with a comet that flies through it eating the 41 days I committed." width="100%">
   </picture>
 </p>
 <p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/cards/sources-dark.svg">
-    <img src="assets/cards/sources-light.svg" alt="Where my commits go: 178 to Wakandi (Jamii Connect, CRB Lookup, Jamii Studio, Waypoint) and 52 to personal and client projects." width="49%">
+    <img src="assets/cards/sources-light.svg" alt="Where my commits go: 178 to Wakandi (Jamii Connect, CRB Lookup, Jamii Studio, Waypoint) and 46 to personal and client projects." width="49%">
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/cards/lines-dark.svg">
-    <img src="assets/cards/lines-light.svg" alt="Lines changed in the last 12 months: 94,279 added and 11,793 removed, leaving out 12 bulk commits." width="49%">
+    <img src="assets/cards/lines-light.svg" alt="Lines changed in the last 12 months: 93,982 added and 11,765 removed, leaving out 12 bulk commits." width="49%">
   </picture>
 </p>
 <p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/cards/languages-dark.svg">
-    <img src="assets/cards/languages-light.svg" alt="Languages, weighted by my commits: TypeScript 62.9%, PLpgSQL 15%, Python 13.1%, JavaScript 3.9%, CSS 3%, HTML 2%." width="49%">
+    <img src="assets/cards/languages-light.svg" alt="Languages, weighted by my commits: TypeScript 65.3%, PLpgSQL 15.6%, Python 10.2%, JavaScript 4.1%, CSS 3.1%, HTML 1.6%." width="49%">
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/cards/weekdays-dark.svg">
-    <img src="assets/cards/weekdays-light.svg" alt="Commits by weekday: Mon 54, Tue 48, Wed 31, Thu 52, Fri 28, Sat 4, Sun 13." width="49%">
+    <img src="assets/cards/weekdays-light.svg" alt="Commits by weekday: Mon 48, Tue 48, Wed 31, Thu 52, Fri 28, Sat 4, Sun 13." width="49%">
   </picture>
 </p>
 <!-- /live:year -->

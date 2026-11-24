@@ -18,8 +18,8 @@
   <text x="401" y="41" text-anchor="end" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#8a7468">last 12 months</text>
   <circle cx="104" cy="162" r="62" fill="none" stroke="#f1e7de" stroke-width="18"/>
   <circle class="arc" cx="104" cy="162" r="62" fill="none" stroke="#9a6434" stroke-width="18" stroke-dasharray="389.6 389.6" transform="rotate(-90 104 162)"/>
-  <circle class="arc" cx="104" cy="162" r="62" fill="none" stroke="#6a3fd8" stroke-width="18" stroke-dasharray="301.5 389.6" transform="rotate(-90 104 162)"/>
-  <text x="104" y="168" text-anchor="middle" font-size="30" font-family="TDisplay, 'Space Grotesk', 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" fill="#24161a">230</text>
+  <circle class="arc" cx="104" cy="162" r="62" fill="none" stroke="#6a3fd8" stroke-width="18" stroke-dasharray="309.6 389.6" transform="rotate(-90 104 162)"/>
+  <text x="104" y="168" text-anchor="middle" font-size="30" font-family="TDisplay, 'Space Grotesk', 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" fill="#24161a">224</text>
   <text x="104" y="188" text-anchor="middle" font-size="11" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#8a7468">commits</text>
   <rect x="204" y="108" width="10" height="10" rx="3" fill="#6a3fd8"/>
   <text x="222" y="118" font-size="14" font-family="TDisplay, 'Space Grotesk', 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" fill="#24161a">Wakandi</text>
@@ -28,7 +28,7 @@
   <text x="222" y="152" font-size="11.5" fill="#8a7468">Jamii Studio, Waypoint</text>
   <rect x="204" y="186" width="10" height="10" rx="3" fill="#9a6434"/>
   <text x="222" y="196" font-size="14" font-family="TDisplay, 'Space Grotesk', 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" fill="#24161a">Personal &amp; client</text>
-  <text x="401" y="196" text-anchor="end" font-size="12.5" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#9a6434">52</text>
+  <text x="401" y="196" text-anchor="end" font-size="12.5" font-family="TMono, 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace" fill="#9a6434">46</text>
   <text x="222" y="215" font-size="11.5" fill="#8a7468">MemberPulse, Expert RN Scholars,</text>
   <text x="222" y="230" font-size="11.5" fill="#8a7468">Sheria AI, EA Outreach</text>
   <rect x="0.5" y="0.5" width="424" height="279" rx="16" fill="none" stroke="#e7d9cd"/>
