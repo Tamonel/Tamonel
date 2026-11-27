@@ -7,7 +7,7 @@
 <p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/cards/stats-dark.svg">
-    <img src="assets/cards/stats-light.svg" alt="224 commits in the last 12 months, private work included; 18 of 18 pull requests merged; current streak 0 days (longest 11); 93,982 lines added and 11,765 removed; 41 active days in 12 repos. Updated 26 Nov 2026." width="100%">
+    <img src="assets/cards/stats-light.svg" alt="224 commits in the last 12 months, private work included; 18 of 18 pull requests merged; current streak 0 days (longest 11); 93,982 lines added and 11,765 removed; 41 active days in 12 repos. Updated 27 Nov 2026." width="100%">
   </picture>
 </p>
 <!-- /live:stats -->
